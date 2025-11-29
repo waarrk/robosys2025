@@ -5,6 +5,23 @@ import sys
 import locale
 
 def main() -> int:
+    raw_lines = sys.stdin.read().splitlines()
+
+    # 入力なし
+    if len(raw_lines) == 0:
+        return 1
+
+    items: list[str] = []
+
+    for line in raw_lines:
+        s = line.strip()
+
+        # 空行エラー
+        if s == "":
+            return 1
+
+        items.append(s)
+
     # 正常系ソート
     items_sorted = sorted(items, key=keyfunc)
     print("\n".join(items_sorted))
