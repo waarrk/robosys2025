@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Yusaku Washio <s22c1704za@s.chibakoudai.jp>
+# SPDX-License-Identifier: BSD-3-Clause
+import sys
+import locale
+
+def main() -> int:
+    # 正常系ソート
+    items_sorted = sorted(items, key=keyfunc)
+    print("\n".join(items_sorted))
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
