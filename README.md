@@ -1,4 +1,4 @@
-# uspell: スペルチェッカー
+# kana-sort
 
 ![test](https://github.com/ryuichiueda/robosys2025/actions/workflows/test.yml/badge.svg)
 
