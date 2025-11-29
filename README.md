@@ -2,7 +2,8 @@
 
 ![GitHub Actions Status](https://github.com/waarrk/robosys2025/actions/workflows/test.yml/badge.svg)
 
-`kana-sort` は **標準入力を受け取り、Unicode のデフォルト順で行をソートして返すコマンド**です。前後の空白は自動で取り除かれ、空行を含む入力はエラーとして終了コード 1 を返します。
+`kana-sort` は **標準入力を受け取り、Unicode のデフォルト順で行をソートして返すコマンド**です。
+前後の空白は取り除かれ、空行を含む入力はエラーとして終了コード 1 を返します。
 
 人の名前を50音順にソートしたい場合に便利です。
 
@@ -23,7 +24,7 @@ $ chmod +x kana-sort test.bash
 
 ## 使い方
 
-標準入力に 1 行ずつ名前などを与えます。空行（または空白だけの行）が含まれているときは終了コード 1 を返します。
+標準入力に 1 行ずつ名前などを与えます。
 
 ```bash
 $ printf "山田\nあいざわ\nたなか\n" | ./kana-sort
