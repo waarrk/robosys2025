@@ -1,6 +1,6 @@
 # kana-sort
 
-![test](https://github.com/ryuichiueda/robosys2025/actions/workflows/test.yml/badge.svg)
+![test](https://github.com/waarrk/robosys2025/actions/workflows/test.yml/badge.svg)
 
 標準入力から英語の文を読んで、間違っている疑いのあるものを出力します。
 
