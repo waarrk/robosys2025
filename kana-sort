@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # SPDX-FileCopyrightText: 2025 Yusaku Washio <s22c1704za@s.chibakoudai.jp>
 # SPDX-License-Identifier: BSD-3-Clause
+
 import sys
-import locale
 
 
 def main() -> int:
@@ -23,28 +23,10 @@ def main() -> int:
 
         items.append(s)
 
-    def key_identity(s: str) -> str:
-        return s
+    # 正常系
+    items_sorted = sorted(items)
 
-    keyfunc = key_identity
-
-    try:
-        locale.setlocale(locale.LC_COLLATE, "ja_JP.UTF-8")
-
-        def keyfunc(s: str) -> str:
-            try:
-                return locale.strxfrm(s)
-            except OSError:
-                # macOS / Windowsの保険
-                return s
-
-    except locale.Error:
-        pass
-
-    # 正常系ソート
-    items_sorted = sorted(items, key=keyfunc)
     print("\n".join(items_sorted))
-
     return 0
 
 
