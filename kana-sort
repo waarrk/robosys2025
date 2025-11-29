@@ -4,19 +4,12 @@
 import sys
 import locale
 
-def main() -> int:
-    # 日本語ロケールでの比較にする
-    try:
-        locale.setlocale(locale.LC_COLLATE, "ja_JP.UTF-8")
-        keyfunc = locale.strxfrm
-    except locale.Error:
-        # フォールバック
-        keyfunc = lambda s: s
 
+def main() -> int:
     raw_lines = sys.stdin.read().splitlines()
 
     # 入力なし
-    if len(raw_lines) == 0:
+    if not raw_lines:
         return 1
 
     items: list[str] = []
@@ -24,11 +17,29 @@ def main() -> int:
     for line in raw_lines:
         s = line.strip()
 
-        # 空行エラー
+        # 空行
         if s == "":
             return 1
 
         items.append(s)
+
+    def key_identity(s: str) -> str:
+        return s
+
+    keyfunc = key_identity
+
+    try:
+        locale.setlocale(locale.LC_COLLATE, "ja_JP.UTF-8")
+
+        def keyfunc(s: str) -> str:
+            try:
+                return locale.strxfrm(s)
+            except OSError:
+                # macOS / Windowsの保険
+                return s
+
+    except locale.Error:
+        pass
 
     # 正常系ソート
     items_sorted = sorted(items, key=keyfunc)
