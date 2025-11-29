@@ -16,8 +16,8 @@ def main() -> int:
     raw_lines = sys.stdin.read().splitlines()
 
     # 入力なし
-    if len(raw_lines) == 0:
-        return 1
+    #if len(raw_lines) == 0:
+    #    return 1
 
     items: list[str] = []
 
