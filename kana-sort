@@ -5,6 +5,14 @@ import sys
 import locale
 
 def main() -> int:
+    # 日本語ロケールでの比較にする
+    try:
+        locale.setlocale(locale.LC_COLLATE, "ja_JP.UTF-8")
+        keyfunc = locale.strxfrm
+    except locale.Error:
+        # フォールバック
+        keyfunc = lambda s: s
+
     raw_lines = sys.stdin.read().splitlines()
 
     # 入力なし
