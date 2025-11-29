@@ -19,16 +19,16 @@ def main() -> int:
     #if len(raw_lines) == 0:
     #    return 1
 
-    items: list[str] = []
+    #items: list[str] = []
 
-    for line in raw_lines:
-        s = line.strip()
+    #for line in raw_lines:
+    #    s = line.strip()
 
         # 空行エラー
-        if s == "":
-            return 1
+    #    if s == "":
+    #        return 1
 
-        items.append(s)
+    #    items.append(s)
 
     # 正常系ソート
     items_sorted = sorted(items, key=keyfunc)
