@@ -19,7 +19,7 @@ def main() -> int:
     #if len(raw_lines) == 0:
     #    return 1
 
-    #items: list[str] = []
+    items: list[str] = []
 
     #for line in raw_lines:
     #    s = line.strip()
