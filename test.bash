@@ -1,4 +1,5 @@
 #!/bin/bash -xv
+# SPDX-FileCopyrightText: 2025 Yusaku Washio <s22c1704za@s.chibakoudai.jp>
 # SPDX-License-Identifier: BSD-3-Clause
 
 ng () {
